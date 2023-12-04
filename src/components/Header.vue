@@ -1,18 +1,18 @@
 <template>
     <div class="header">
-        
         <div class="date">{{ date }}</div>
     </div>      
 </template>
 
 <script>
-export default {
-    props: ["date"]
 
+export default {
+    props: ["date"],
 }
 </script>
 
 <style>
+
   .header{
     width: 380px;
     height: 200px;
@@ -31,4 +31,5 @@ export default {
     font-size: 25px;
     font-family: 'Titillium Web', sans-serif;
     }
+
 </style>
