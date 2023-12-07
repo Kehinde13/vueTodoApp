@@ -1,7 +1,10 @@
 
 <template>
    <Header :date="date" />
-   <Contents :savedTodos="savedTodos"/>
+   <Contents 
+   :savedTodos="savedTodos" 
+   @delete="deleteTodo" 
+   @complete="completeTodo"/>
    <Input @add="AddTodo" />
 </template>
 
@@ -26,13 +29,24 @@
     }, 
     methods: {
       AddTodo(newTodo){
-       if(newTodo){
+       if(newTodo.Todo.length > 0 ){
         this.savedTodos.push(newTodo)
+        localStorage.setItem('todos', JSON.stringify(this.savedTodos))
        } else {
         alert("Add A Todo")
-       }
-       this.savedTodos.push(newTodo)
-       localStorage.setItem('todos', JSON.stringify(this.savedTodos))
+       } 
+      },
+      deleteTodo(todo){
+       this.savedTodos = this.savedTodos.filter(
+        task => task.id !== todo
+       )
+       localStorage.setItem(
+        'todos',
+        JSON.stringify(this.savedTodos)
+       )
+      },
+      completeTodo(todo){
+        console.log(todo.classList);
       }
     }
    }

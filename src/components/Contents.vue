@@ -1,13 +1,14 @@
 <template>
   <div class="content">
     <div v-if="savedTodos.length">
-      <ul class="list" v-for="todo in savedTodos" :key="todo.index">
-        <li class="item">
+      <ul class="list" v-for="todo in savedTodos" :key="todo.id">
+        <li class="item" :id="todo.id">
           <font-awesome-icon 
+          @click="completeTodo"
           class="co"
           icon="fa-solid fa-circle-check " />
           <p class="text">
-            {{ todo }}
+            {{ todo.Todo }}
           </p>
           <font-awesome-icon 
           @click="deleteTodo"
@@ -28,13 +29,15 @@ export default {
   props: ["savedTodos"],
   data(){
     return{
-      id: null
+      
     }
   },
   methods: {
-    deleteTodo(){
-      this.$emit('delete', )
-      console.log(this.savedTodos);
+    deleteTodo(event){
+      this.$emit('delete', event.target.parentElement.parentElement.id)
+    },
+    completeTodo(event){
+      this.$emit('complete', event.target.parentElement.parentElement.id)
     }
   }
 };
@@ -68,8 +71,6 @@ export default {
 }
 .item .co:hover {
   cursor: pointer;
-}
-.fa-check-circle {
   color: #6eb200;
 }
 .item p.text {
