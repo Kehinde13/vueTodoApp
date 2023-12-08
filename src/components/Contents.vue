@@ -3,17 +3,11 @@
     <div v-if="savedTodos.length">
       <ul class="list" v-for="todo in savedTodos" :key="todo.id">
         <li class="item" :id="todo.id">
-          <font-awesome-icon 
-          @click="completeTodo"
-          class="co"
-          icon="fa-solid fa-circle-check " />
+          <font-awesome-icon @click="editTodo" class="co" icon="fa-solid fa-pen-to-square " />
           <p class="text">
             {{ todo.Todo }}
           </p>
-          <font-awesome-icon 
-          @click="deleteTodo"
-          class="de"
-          icon="fa-solid fa-trash-can" />
+          <font-awesome-icon @click="deleteTodo" class="de" icon="fa-solid fa-trash-can" />
         </li>
       </ul>
     </div>
@@ -25,19 +19,15 @@
 
 <script>
 export default {
-  
+
   props: ["savedTodos"],
-  data(){
-    return{
-      
-    }
-  },
+
   methods: {
-    deleteTodo(event){
+    deleteTodo(event) {
       this.$emit('delete', event.target.parentElement.parentElement.id)
     },
-    completeTodo(event){
-      this.$emit('complete', event.target.parentElement.parentElement.id)
+    editTodo(event) {
+      this.$emit('edit', event.target.parentElement.parentElement.id)
     }
   }
 };
@@ -62,6 +52,7 @@ export default {
   padding: 0;
   margin: 0;
 }
+
 .item .co {
   position: absolute;
   font-size: 25px;
@@ -69,10 +60,12 @@ export default {
   left: 15px;
   top: 10px;
 }
+
 .item .co:hover {
   cursor: pointer;
   color: #6eb200;
 }
+
 .item p.text {
   position: absolute;
   padding: 0;
@@ -83,16 +76,14 @@ export default {
   background-color: #fff;
   max-width: 285px;
 }
-.lineThrough {
-  text-decoration: line-through;
-  color: #ccc;
-}
+
 .item .de {
   position: absolute;
   font-size: 25px;
   right: 15px;
   top: 10px;
 }
+
 .item .de:hover {
   color: #af0000;
   cursor: pointer;
