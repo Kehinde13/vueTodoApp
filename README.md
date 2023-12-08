@@ -1,29 +1,69 @@
-# fetchingDataWithVue
+# AltSchool 3rd semester first assigment - Vue Todo App
+ 
 
-This template should help get you started developing with Vue 3 in Vite.
+## Table of contents
 
-## Recommended IDE Setup
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+## Overview
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### The challenge
 
-## Project Setup
+Users should be able to:
 
-```sh
-npm install
-```
+- users should be able to create a todo
 
-### Compile and Hot-Reload for Development
+- users should be able to delete a todo
 
-```sh
-npm run dev
-```
+- users should be able to view all todos
 
-### Compile and Minify for Production
+- users should be able to edit a todo
 
-```sh
-npm run build
-```
+- users should meet a decent UI
+
+
+
+### Links
+
+- [Solution URL](https://github.com/Kehinde13/vueTodoApp)
+- [Live Site URL](https://657368f240c3bb494d950850--fanciful-marshmallow-f558b0.netlify.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- VueJS
+- tailwindCSS - For styles
+
+
+### What I learned
+
+- I cemented my basic vue knowledge with this app
+
+
+
+### Continued development
+
+- I hope to continue to learn how to build app with vueJS 
+
+
+
+## Author
+
+- Github - [Balogun Kehinde] (https://github.com/Kehinde13)
+- Email - Balogunkehinde3@gmail.com
+
+
